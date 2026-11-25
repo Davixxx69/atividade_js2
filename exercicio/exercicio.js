@@ -34,9 +34,12 @@ const capacidade_caixa = 6.00;
 const faturamento_bruto = (p_cafe * qtd_cafe) + (p_bolo * qtd_bolo);
 const faturamento_liquido = faturamento_bruto - taxa_o;
 const ticket_medio = faturamento_bruto / clientes;
-const sobre_cookies = total_cookies / capacidade_caixa; 
+const sobre_cookies = total_cookies % capacidade_caixa; 
 
-console.log("| faturamento bruto: " + faturamento_bruto + " reais | faturamento liquido: " + faturamento_liquido + " reais | Ticket médio: " + ticket_medio + " | sobra dos cookies: " + sobre_cookies + " cookies" );
+console.log("1. Faturamento Bruto: " + faturamento_bruto);
+console.log("2. Faturamento Líquido: " + faturamento_liquido);
+console.log("3. Ticket Médio: " + ticket_medio);
+console.log("4. Sobra de Cookies: " + sobre_cookies);
 
 
 
@@ -60,7 +63,23 @@ console.log("| faturamento bruto: " + faturamento_bruto + " reais | faturamento 
    4. O tipo do dado digitado difere do tipo esperado no banco?
    5. O saldo do cliente cobre o valor da compra?
    ========================================================================== */
+const idade = 17;
+const codigo_digitado = "100";
+const codigo_banco = 100;
+saldo_disponivel = 250.00;
+valor_compra = 250.00;
 
+const maioridade = idade >= 18;
+const codigo_valido = codigo_digitado == codigo_banco;
+const codigo_valido_tipo = codigo_digitado === codigo_banco;
+const tipo_diferente = typeof codigo_digitado !== typeof codigo_banco;
+const saldo_cobre = saldo_disponivel >= valor_compra;
+
+console.log("1. Maioridade: " + maioridade);
+console.log("2. Código válido: " + codigo_valido);
+console.log("3. Código válido (tipo): " + codigo_valido_tipo);
+console.log("4. Tipo diferente: " + tipo_diferente);
+console.log("5. Saldo cobre compra: " + saldo_cobre);
 
 
 
@@ -86,3 +105,17 @@ console.log("| faturamento bruto: " + faturamento_bruto + " reais | faturamento 
    3. Acesso à área VIP: liberado para assinantes premium, ou para compras a
       partir de 300 reais que possuam cupom promocional.
    ========================================================================== */
+   const valor_compra2 = 220;
+   const assinante_premium = false;
+   const cupom_promocional = true;
+   const restricao_entrega = false;
+   const estudante = true;
+   const idade2 = 22;
+
+   const frete_gratis = (valor_compra2 >= 200 || assinante_premium) && !restricao_entrega;
+   const desconto_universitario = estudante && idade2 <= 29;
+   const acesso_vip = assinante_premium || (valor_compra2 >= 300 && cupom_promocional);
+
+   console.log("1. Frete grátis: " + frete_gratis);
+   console.log("2. Desconto universitário: " + desconto_universitario);
+   console.log("3. Acesso à área VIP: " + acesso_vip);
